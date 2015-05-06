@@ -1,0 +1,9 @@
+body {
+    background: red;
+}
+.tp {
+    width: 100px;
+    height: 100px;
+    background: url("../images/1.png");
+    background-size: cover;
+}
