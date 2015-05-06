@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
    // var assetFolder = 'web/build/today';
     grunt.initConfig({
+        clean: ['web/built'],
         requirejs: {
             compile: {
                 options: {
@@ -24,8 +25,8 @@ module.exports = function(grunt) {
                             separateCSS: true,
                             name: 'mainOne',
                             include: [
-                                'apps/popupApp',
-                                'apps/someCtrl'
+                                'chat/app',
+                                'popup/app'
                             ],
                             exclude: ['common']
                         }
@@ -34,10 +35,11 @@ module.exports = function(grunt) {
             }
         }
     });
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['clean', 'build']);
     grunt.registerTask('build', 'requirejs');
 };

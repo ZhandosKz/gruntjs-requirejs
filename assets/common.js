@@ -1,8 +1,9 @@
 requirejs.config({
     paths: {
-        apps: 'apps',
         jquery: 'libs/jquery',
-        alight: 'libs/alight'
+        alight: 'libs/alight',
+        chat: 'modules/chat',
+        popup: 'modules/popup'
     },
     map: {
         '*': {

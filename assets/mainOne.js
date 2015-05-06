@@ -1,4 +1,5 @@
 require(['./common'], function() {
-    require(['apps/popupApp']);
-    require(['apps/someCtrl']);
+    require(['alight', 'chat/app', 'popup/app'], function(alight) {
+        alight.bootstrap();
+    });
 });
