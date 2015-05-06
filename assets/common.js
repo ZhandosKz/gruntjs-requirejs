@@ -4,6 +4,11 @@ requirejs.config({
         jquery: 'libs/jquery',
         alight: 'libs/alight'
     },
+    map: {
+        '*': {
+            'css': 'require/require_css/css'
+        }
+    },
     shim: {
         'alight': {
             deps: ['jquery'],

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(grunt) {
-    var assetFolder = 'web/build/today';
+   // var assetFolder = 'web/build/today';
     grunt.initConfig({
         requirejs: {
             compile: {
@@ -11,6 +11,7 @@ module.exports = function(grunt) {
                     mainConfigFile: 'assets/common.js',
                     baseUrl: './',
                     dir: 'web/built/tag',
+                    siteRoot: '../../',
                     modules: [
                         {
                             name: 'common',
@@ -20,32 +21,18 @@ module.exports = function(grunt) {
                             ]
                         },
                         {
+                            separateCSS: true,
                             name: 'mainOne',
                             include: [
-                                'apps/popupApp'
+                                'apps/popupApp',
+                                'apps/someCtrl'
                             ],
-
                             exclude: ['common']
                         }
                     ]
                 }
             }
         }
-        //requirejs: {
-        //    compile: {
-        //        options: {
-        //            appDir: 'test',
-        //            dir: 'test-build',
-        //            mainConfigFile: 'test/common.js',
-        //            modules: [
-        //                {
-        //                    name: 'common',
-        //                    include: ['jquery']
-        //                }
-        //            ]
-        //        }
-        //    }
-        //}
     });
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-text-replace');
